@@ -1,0 +1,16 @@
+﻿@page "/chatbot"
+@inject BrowserState.StateManager state
+
+<input class="form-control" bind="@Input" />
+<button type="button" onclick="@AcceptInput">Talk</button>
+
+<CommunicationLog Responses=state.CommunicationLog />
+
+@functions {
+
+  private string Input { get; set; } = "test";
+
+  void AcceptInput() {
+    state.AcceptResponse(Input);
+  }
+}

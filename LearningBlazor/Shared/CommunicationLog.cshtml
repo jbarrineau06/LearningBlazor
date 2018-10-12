@@ -1,0 +1,13 @@
+﻿<h2>Responses @Responses.Count</h2>
+
+<ul class="list-group">
+  @foreach (var item in Responses)
+  {
+    <li class="list-group-item"><i>@item.TimeDelivered</i> @item.Text</li>
+  }
+</ul>
+
+@functions {
+  [Parameter] ICollection<LearningBlazor.Chat.Response> Responses { get; set; }
+
+}

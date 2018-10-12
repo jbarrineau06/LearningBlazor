@@ -7,6 +7,7 @@ namespace LearningBlazor
   {
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddTransient<BrowserState.StateManager, BrowserState.StateManager>();
     }
 
     public void Configure(IBlazorApplicationBuilder app)
