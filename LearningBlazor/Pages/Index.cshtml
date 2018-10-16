@@ -1,7 +1,36 @@
 ﻿@page "/"
+@inject HttpClient httpClient
 
-<h1>Hello, world!</h1>
+<div class="row">
+  @if (pictureOfTheDay == null)
+  {
+    <p><em>Loading...</em></p>
+  }
+  else
+  {
+    <img src="@pictureOfTheDay.Url" />
+  }
+</div>
 
-Welcome to your new app.
+@functions {
+AstronomyPictureOfTheDay pictureOfTheDay;
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+protected override async Task OnInitAsync()
+{
+  pictureOfTheDay = await httpClient.GetJsonAsync<AstronomyPictureOfTheDay>($"https://api.nasa.gov/planetary/apod?api_key={Config.NASA_API_KEY}");
+}
+
+public class AstronomyPictureOfTheDay
+{
+  public string Copyright { get; set; }
+  public string Date { get; set; }
+  public string Explanation { get; set; }
+  public string HdUrl { get; set; }
+  //public string Media_type { get; set; }
+  public string MediaType { get; set; }
+  //public string Service_version { get; set; }
+  public string ServiceVersion { get; set; }
+  public string Title { get; set; }
+  public string Url { get; set; }
+}
+}
