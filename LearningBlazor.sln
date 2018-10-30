@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearningBlazor", "LearningBlazor\LearningBlazor.csproj", "{4410E10A-4346-4F87-93A7-E493FF10A63F}"
+
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningBlazor.Chat", "LearningBlazor.Chat\LearningBlazor.Chat.csproj", "{FDF789F3-18D8-4178-AA75-AE6B9AE40517}"
+
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
